@@ -1,0 +1,25 @@
+<div class="allContent">
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr *ngFor="let nota of notas">
+        <td>
+          <div  class="nota">
+            <div (click)="editNote(nota)" class="nota-header">
+              <h3 class="nota-titulo">{{ nota.titulo | titlecase }}</h3>
+              <span (click)="editNote(nota)" class="nota-fecha">{{ nota.fecha_creacion}}</span>
+            </div>
+            <p (click)="editNote(nota)" class="nota-descripcion">{{ nota.descripcion | descriptionPipe }}</p>
+            <div>
+              <button (click)="deleteNota(nota.id)" class="deleteBtn"><img class="deleteBtnImg" src="delete.png" alt=""></button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <button mat-raised-button (click)="addNota()" class="addBtn"><img class="addImg" src="add.png" alt=""></button>
+</div>
+</div>

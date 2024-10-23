@@ -1,0 +1,8 @@
+<input class="tituloAddNote" placeholder="Titulo de la nota" [(ngModel)]="titulo">
+<mat-dialog-content>
+  <textarea class="descripcionAddNote" placeholder="Descripción de la nota" [(ngModel)]="descripcion"></textarea>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]>Cancelar</button>
+  <button mat-button [mat-dialog-close] (click)="guardarNota()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
